@@ -30,11 +30,11 @@ class Recording {
     addNote(pitch) {
         // Start counting from the first note
         // to avoid any dead time at the start
-        if (this.startTime == null)
-            Date.now()
+        if (this.startTime === null)
+            this.startTime = Date.now()
 
         // Get the time difference since the start to figure out the offset
-        const timing = (Date.now() - this.startTime) / 1000;
+        let timing = (Date.now() - this.startTime) / 1000;
         this.tune.push(new Note(pitch, "8n", timing));
     }
     
@@ -139,13 +139,12 @@ class Recorder {
 
     endRecording(tuneAPI, tuneList) {
         // Retrieve the tune from the recording
-        const name = this.recordingNameField.value;
-        const tune = this.recording.finish(name);
+        let name = this.recordingNameField.value;
 
-        // Add the tune to the tune list on both client and server
-        tuneList.addTune(tune);
-        tuneList.refreshTuneListSelection();
-        tuneAPI.postTune(tune);
+        if (name == "")
+            name = "No-name Tune";
+
+        const tune = this.recording.finish(name);
 
         // Reset recording
         this.recording = null;
@@ -153,6 +152,15 @@ class Recorder {
         // Update button states
         this.startRecordingButton.disabled = false;
         this.endRecordingButton.disabled = true;
+
+        // Do not add the recording if it is empty
+        if (tune.tune.length == 0)
+            return;
+
+        // Add the tune to the tune list on both client and server
+        tuneList.addTune(tune);
+        tuneList.refreshTuneListSelection();
+        tuneAPI.postTune(tune);
     }
 }
 
@@ -244,7 +252,7 @@ class App {
 
     setupKeybinds() {
         document.addEventListener("keydown", e => {
-            if (document.activeElement.tagName == "INPUT")
+            if (document.activeElement.tagName === "INPUT")
                 return;
 
             if (this.keymap[e.key])
