@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "ad762396-bd98-4860-89d4-3ae283fcdb8b",
+		"name": "Assignment 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11601331"
+	},
+	"item": [
+		{
+			"name": "Tunes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/tunes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"tunes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tunes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Sick beats\",\n    \"tune\": [\n      { \"note\": \"G4\", \"duration\": \"4n\", \"timing\": 0 },\n      { \"note\": \"C5\", \"duration\": \"4n\", \"timing\": 0.5 },\n      { \"note\": \"D#5\", \"duration\": \"4n\", \"timing\": 1 },\n      { \"note\": \"D5\", \"duration\": \"4n\", \"timing\": 1.5 },\n      { \"note\": \"C5\", \"duration\": \"4n\", \"timing\": 2 },\n      { \"note\": \"D#5\", \"duration\": \"4n\", \"timing\": 2.5 },\n      { \"note\": \"C5\", \"duration\": \"4n\", \"timing\": 3 },\n      { \"note\": \"D5\", \"duration\": \"4n\", \"timing\": 3.5 },\n      { \"note\": \"C5\", \"duration\": \"4n\", \"timing\": 4 },\n      { \"note\": \"G#4\", \"duration\": \"4n\", \"timing\": 4.5 },\n      { \"note\": \"Bb4\", \"duration\": \"4n\", \"timing\": 5 },\n      { \"note\": \"G4\", \"duration\": \"2n\", \"timing\": 5.5 },\n      { \"note\": \"G4\", \"duration\": \"4n\", \"timing\": 8 },\n      { \"note\": \"C5\", \"duration\": \"4n\", \"timing\": 8.5 },\n      { \"note\": \"D#5\", \"duration\": \"4n\", \"timing\": 9 },\n      { \"note\": \"D5\", \"duration\": \"4n\", \"timing\": 9.5 },\n      { \"note\": \"C5\", \"duration\": \"4n\", \"timing\": 10 },\n      { \"note\": \"D#5\", \"duration\": \"4n\", \"timing\": 10.5 },\n      { \"note\": \"C5\", \"duration\": \"4n\", \"timing\": 11 },\n      { \"note\": \"D5\", \"duration\": \"4n\", \"timing\": 11.5 },\n      { \"note\": \"C5\", \"duration\": \"4n\", \"timing\": 12 },\n      { \"note\": \"G4\", \"duration\": \"4n\", \"timing\": 12.5 },\n      { \"note\": \"F#4\", \"duration\": \"4n\", \"timing\": 13 },\n      { \"note\": \"F4\", \"duration\": \"2n\", \"timing\": 13.5 },\n      { \"note\": \"F4\", \"duration\": \"4n\", \"timing\": 16 },\n      { \"note\": \"G#4\", \"duration\": \"4n\", \"timing\": 16.5 },\n      { \"note\": \"B4\", \"duration\": \"4n\", \"timing\": 17 },\n      { \"note\": \"D5\", \"duration\": \"2n\", \"timing\": 17.5 },\n      { \"note\": \"F4\", \"duration\": \"4n\", \"timing\": 20 },\n      { \"note\": \"G#4\", \"duration\": \"4n\", \"timing\": 20.5 },\n      { \"note\": \"B4\", \"duration\": \"4n\", \"timing\": 21 },\n      { \"note\": \"C5\", \"duration\": \"2n\", \"timing\": 21.5 },\n      { \"note\": \"C4\", \"duration\": \"4n\", \"timing\": 24 },\n      { \"note\": \"D#4\", \"duration\": \"4n\", \"timing\": 24.5 },\n      { \"note\": \"Bb4\", \"duration\": \"4n\", \"timing\": 25 },\n      { \"note\": \"G#4\", \"duration\": \"4n\", \"timing\": 25.5 },\n      { \"note\": \"G4\", \"duration\": \"4n\", \"timing\": 26 },\n      { \"note\": \"Bb4\", \"duration\": \"4n\", \"timing\": 26.5 },\n      { \"note\": \"G#4\", \"duration\": \"4n\", \"timing\": 27 },\n      { \"note\": \"G#4\", \"duration\": \"4n\", \"timing\": 27.5 },\n      { \"note\": \"G4\", \"duration\": \"4n\", \"timing\": 28 },\n      { \"note\": \"G4\", \"duration\": \"4n\", \"timing\": 28.5 },\n      { \"note\": \"B3\", \"duration\": \"4n\", \"timing\": 29 },\n      { \"note\": \"C4\", \"duration\": \"2n\", \"timing\": 29.5 }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/tunes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"tunes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

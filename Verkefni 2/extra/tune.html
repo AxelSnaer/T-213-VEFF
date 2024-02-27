@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Tune Sample</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- We need to import Tone -->
+        <script src="https://unpkg.com/tone"></script>
+    </head>
+
+    <body>
+        <h1>Tune example</h1>
+        <p>In this example, we play a basic tune consisting of three notes.
+            You are free to use/adapt these examples to your needs in Assignment 2.</p>
+        <br>
+        <!-- Clicking this button calls playTune(), which will play three notes using Tone.js -->
+        <button type="button" onclick="playTune()">Play tune</button>
+
+        <script>
+            //We initialise the synthesiser
+            const synth = new Tone.Synth().toDestination();
+
+            const playTune = () => {
+                //initialise a timer to decide when to play individual notes
+                const now = Tone.now();
+
+                //Play a C4 as an 8th note
+                synth.triggerAttackRelease("c4", "8n", now);
+
+                //Play a F#4 as a 4th note, after half a second
+                synth.triggerAttackRelease("f#4", "4n", now + 0.5);
+
+                //Play a D#4 as a half note after 1 second
+                synth.triggerAttackRelease("d#4", "2n", now + 1);
+            }
+        </script>
+    </body>
+
+</html>

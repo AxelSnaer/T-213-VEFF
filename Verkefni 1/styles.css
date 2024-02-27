@@ -1,0 +1,111 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+.min-size-warning {
+    display: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 25px;
+}
+
+.menubar {
+    display: flex;
+    height: 20px;
+    align-items: center;
+    gap: 5px;
+}
+
+.menubar select {
+    padding: 2px;
+}
+
+.btn-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.record-label {
+    width: 20%;
+    text-align: right;
+}
+
+.keyboard {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: gray;
+}
+
+.white-notes {
+    position: absolute;
+    display: flex;
+    align-content: stretch;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.white-notes button {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.black-notes {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 80%;
+    z-index: 2;
+}
+
+.black-notes button {
+    width: 6%;
+    background-color: black;
+    color: lightgray;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.black-notes div {
+    width: 6%;
+    height: 80%;
+}
+
+@media screen and (max-width: 599px) {
+    main {
+        display: none;
+    }
+
+    .min-size-warning {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 25px;
+        gap: 25px;
+    }
+
+    .min-size-warning img {
+        width: 100%;
+    }
+}

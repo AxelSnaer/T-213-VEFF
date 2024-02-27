@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Axios example</title>
+        <meta charset="UTF-8">
+
+        <!-- We need to import Axios in order to be able to use the axios object below -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+
+    <body>
+        <h1>Axios example</h1>
+        <p>In this example, we perform a GET request to "http://localhost:3000/api/v1/tunes".
+            You are free to use/adapt these examples to your needs in Assignment 2.</p>
+        <p>Please note that your backend (API) needs to be running in order for this to work.</p>
+        <!-- Clicking this button calls getAllTunes(), which will do an AJAX request -->
+        <button type="button" onclick="getAllTunes()">Test GET request</button>
+
+        <script>
+            const getAllTunes = async () => {
+                //The URL to which we will send the request
+                const url = 'http://localhost:3000/api/v1/tunes';
+
+                //Perform a GET request to the url
+                try {
+                    const response = await axios.get(url)
+                    //When successful, print the received data
+                    console.log("Success: ", response.data);
+
+                    //response.data is an array if the request was successful, so you could iterate through it a forEach loop.
+                    response.data.forEach(item => {
+                        console.log("Tune name: " + item.name);
+                    })
+
+                }
+                catch (error) {
+                    //When unsuccessful, print the error.
+                    console.log(error);
+                }
+                // This code is always executed, independent of whether the request succeeds or fails.
+            }
+        </script>
+    </body>
+
+</html>

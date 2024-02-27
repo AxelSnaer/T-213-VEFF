@@ -1,0 +1,12 @@
+---
+:id: 225809689
+:submitters:
+- :name: Axel Snær Ammendrup Atlason
+  :email: axela23@ru.is
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2024-01-30 14:32:59.770380000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2024-01-30 06:32:59.770380000 Z
+:status: processed
+:score: 8.0
