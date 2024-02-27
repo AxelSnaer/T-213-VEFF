@@ -1,6 +1,5 @@
 
-//const url   = 'http://localhost:3000/api/v1';
-const url   = 'http://173.249.17.254:3000/api/v1';
+const url   = 'http://zugeo.net:3000/api/v1';
 const synth = new Tone.Synth().toDestination();
 
 class Note {
@@ -191,14 +190,16 @@ class TuneAPI {
 
 class App {
     constructor(tuneAPI) {
+        this.tuneAPI = tuneAPI;
+    }
+
+    setup() {
         this.playTuneButton       = document.querySelector("#tunebtn");
         this.startRecordingButton = document.querySelector("#recordbtn");
         this.endRecordingButton   = document.querySelector("#stopbtn");
         this.recordingNameField   = document.querySelector("#recordName");
 
         this.keymap = {};
-
-        this.tuneAPI = tuneAPI;
 
         this.recorder = new Recorder(
             this.startRecordingButton,
@@ -252,4 +253,8 @@ class App {
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => new App(new TuneAPI(url)));
+document.addEventListener("DOMContentLoaded", () => {
+    let tuneAPI = new TuneAPI(url);
+    let app = new App(tuneAPI);
+    app.setup();
+});
