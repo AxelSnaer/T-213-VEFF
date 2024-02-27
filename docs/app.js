@@ -190,7 +190,7 @@ class TuneAPI {
 }
 
 class App {
-    constructor() {
+    constructor(tuneAPI) {
         this.playTuneButton       = document.querySelector("#tunebtn");
         this.startRecordingButton = document.querySelector("#recordbtn");
         this.endRecordingButton   = document.querySelector("#stopbtn");
@@ -198,7 +198,7 @@ class App {
 
         this.keymap = {};
 
-        this.tuneAPI = new TuneAPI(url);
+        this.tuneAPI = tuneAPI;
 
         this.recorder = new Recorder(
             this.startRecordingButton,
@@ -252,4 +252,4 @@ class App {
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => new App());
+document.addEventListener("DOMContentLoaded", () => new App(new TuneAPI(url)));
